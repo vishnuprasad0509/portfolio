@@ -3,21 +3,41 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio of R Vishnuprasad, Siemens Teamcenter specialist and PLM Software Developer.">
+  <meta name="description" content="Portfolio of R Vishnuprasad — Siemens Teamcenter specialist & PLM Software Developer. ITK/C++, Active Workspace, BMIDE, data migration and CAD-PLM integration.">
+  <meta name="theme-color" content="#05060a">
+  <meta property="og:title" content="R Vishnuprasad | Siemens Teamcenter & PLM Developer">
+  <meta property="og:description" content="Engineering smarter PLM solutions at scale. 4.7+ years across Teamcenter customization, Active Workspace, BMIDE and migration.">
+  <meta property="og:type" content="website">
   <title>R Vishnuprasad | Siemens Teamcenter & PLM Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=github-maintenance-2">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=techy-3">
 </head>
-<body>
+<body data-theme="dark">
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <div class="preloader-glyph"><span>RV</span><div class="preloader-ring"></div></div>
+      <div class="preloader-bar"><i></i></div>
+      <div class="preloader-text" id="preloaderText">INITIALIZING SYSTEM</div>
+    </div>
+  </div>
+
+  <!-- FX layers -->
+  <canvas class="fx-canvas" id="fxCanvas" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
-  <header class="site-header">
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div><div class="ambient ambient-three"></div>
+
+  <header class="site-header" id="siteHeader">
     <a class="brand" href="#home" aria-label="Home"><span class="brand-mark">RV</span><span>R Vishnuprasad<span class="brand-dot">.</span></span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav id="nav">
-      <a href="#about">About</a><a href="#expertise">Expertise</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact" class="nav-cta">Contact ↗</a>
+      <a href="#about">About</a><a href="#expertise">Expertise</a><a href="#projects">Projects</a><a href="#experience">Experience</a>
+      <a class="nav-cta" id="navResume" href="Vishnuprasad_R_Resume.pdf" target="_blank" rel="noopener">Résumé ↓</a>
     </nav>
   </header>
 
@@ -26,50 +46,58 @@
       <div class="hero-copy">
         <div class="eyebrow"><span class="status-dot"></span> SIEMENS TEAMCENTER · PLM ENGINEERING</div>
         <h1>Engineering smarter<br><span class="gradient-text">PLM solutions</span><br>at scale.</h1>
+        <p class="hero-role">I build <span class="typewriter" id="typewriter"></span><span class="type-caret">▍</span></p>
         <p class="hero-lede">I'm <strong>R Vishnuprasad</strong>, a Siemens Teamcenter specialist and Lead Developer with 4.7+ years in software engineering across server-side customization, Active Workspace, BMIDE data modeling, data migration, and enterprise CAD–PLM integration.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#projects">Explore my work <span>↘</span></a>
-          <a class="button button-secondary" href="#contact">Let's connect <span>↗</span></a>
+          <a class="button button-primary magnetic" href="#projects">Explore my work <span>↘</span></a>
+          <a class="button button-secondary magnetic" href="Vishnuprasad_R_Resume.pdf" target="_blank" rel="noopener">Download résumé <span>↓</span></a>
         </div>
         <div class="hero-meta"><span>Based in Bangalore, India</span><span class="meta-divider"></span><span>Lead Developer · Teamcenter</span></div>
       </div>
-      <div class="hero-visual" aria-label="Abstract technical illustration">
-        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div>
-        <div class="core-card">
-          <div class="core-top"><span class="tiny-label">PLM / SYSTEM MAP</span><span class="live-pill">● ACTIVE</span></div>
-          <div class="core-symbol"><span class="symbol-line"></span><span class="symbol-line"></span><span class="symbol-line"></span><span class="symbol-line"></span><span class="symbol-node">TC</span></div>
-          <div class="core-caption"><strong>Connected product lifecycle</strong><span>Data · Process · Structure</span></div>
+
+      <div class="hero-visual" aria-label="Live engineering terminal">
+        <div class="terminal tilt" data-tilt>
+          <div class="terminal-bar"><span class="tdot tdot-r"></span><span class="tdot tdot-y"></span><span class="tdot tdot-g"></span><span class="terminal-title">vishnu@plm ~ teamcenter</span></div>
+          <div class="terminal-body" id="terminalBody"></div>
         </div>
         <div class="float-chip chip-one"><span class="chip-icon">⌘</span><span><b>ITK / C++</b><small>Server customization</small></span></div>
         <div class="float-chip chip-two"><span class="chip-icon">◇</span><span><b>BMIDE</b><small>Data modeling</small></span></div>
         <div class="float-chip chip-three"><span class="chip-icon">▦</span><span><b>Active Workspace</b><small>Web customization</small></span></div>
-        <div class="visual-grid"></div>
       </div>
-      <div class="hero-scroll"><span></span> SCROLL TO EXPLORE</div>
+      <a class="hero-scroll" href="#about"><span></span> SCROLL TO EXPLORE</a>
     </section>
 
     <section class="stats section-wrap">
-      <div class="stat"><strong>4.7<span>+</span></strong><small>Years in software engineering</small></div>
-      <div class="stat"><strong>20<span>+</span></strong><small>Custom workflows designed</small></div>
-      <div class="stat"><strong>10K<span>+</span></strong><small>Items migrated to production</small></div>
+      <div class="stat tilt" data-tilt><strong data-count="4.7" data-suffix="+" data-decimals="1">0</strong><small>Years in software engineering</small></div>
+      <div class="stat tilt" data-tilt><strong data-count="20" data-suffix="+">0</strong><small>Custom workflows designed</small></div>
+      <div class="stat tilt" data-tilt><strong data-count="10" data-suffix="K+">0</strong><small>Items migrated to production</small></div>
+      <div class="stat tilt" data-tilt><strong data-count="100" data-suffix="%">0</strong><small>Migration accuracy</small></div>
     </section>
 
     <section class="section-wrap section-block" id="about">
-      <div class="section-heading"><span class="section-index">ABOUT</span><h2>Engineering the details<br>behind the product.</h2></div>
+      <div class="section-heading"><span class="section-index">// ABOUT</span><h2>Engineering the details<br>behind the product.</h2></div>
       <div class="about-grid">
-        <div class="about-lead"><p><strong>I enjoy solving the tricky problems that sit between engineering data, business rules, and the people who rely on them.</strong> That means making migrations dependable, workflows easier to follow, and Teamcenter customizations maintainable, not just making a feature work once, but making it reliable in day-to-day use.</p><p class="muted">I am a Siemens Teamcenter specialist and Lead Developer with 4.7+ years in software engineering, delivering end-to-end PLM solutions across ITK/C++ server customization, Active Workspace, BMIDE data modeling, and CAD–PLM integration (NX, Solid Edge, SolidWorks). I lead cross-functional teams, mentor developers, and work directly with customers and stakeholders. I also contribute to Teamcenter administration and support deployments across QA and sandbox environments. I migrated 10,000+ items to production with 100% accuracy. Siemens Teamcenter certified, with domain experience across automotive, electronics, and medical devices. Skilled in C, C++, Java, Python, JavaScript, SQL, and XML.</p></div>
-        <div class="about-note"><div class="note-icon">↗</div><h3>My approach</h3><p>Understand the process. Model the data cleanly. Customize with intent. Build something people trust.</p><div class="note-line"></div><span class="tiny-label">CLARITY · QUALITY · COLLABORATION</span></div>
+        <div class="about-lead"><p><strong>I enjoy solving the tricky problems that sit between engineering data, business rules, and the people who rely on them.</strong> That means making migrations dependable, workflows easier to follow, and Teamcenter customizations maintainable — not just making a feature work once, but making it reliable in day-to-day use.</p><p class="muted">I am a Siemens Teamcenter specialist and Lead Developer with 4.7+ years in software engineering, delivering end-to-end PLM solutions across ITK/C++ server customization, Active Workspace, BMIDE data modeling, and CAD–PLM integration (NX, Solid Edge, SolidWorks). I lead cross-functional teams, mentor developers, and work directly with customers and stakeholders. I also contribute to Teamcenter administration and support deployments across QA and sandbox environments. I migrated 10,000+ items to production with 100% accuracy. Siemens Teamcenter certified, with domain experience across automotive, electronics, and medical devices. Skilled in C, C++, Java, Python, JavaScript, SQL, and XML.</p></div>
+        <div class="about-note tilt" data-tilt><div class="note-icon">↗</div><h3>My approach</h3><p>Understand the process. Model the data cleanly. Customize with intent. Build something people trust.</p><div class="note-line"></div><span class="tiny-label">CLARITY · QUALITY · COLLABORATION</span></div>
       </div>
     </section>
 
     <section class="section-wrap section-block" id="expertise">
-      <div class="section-heading"><span class="section-index">EXPERTISE</span><h2>Tools I use to solve<br>real PLM problems.</h2></div>
+      <div class="section-heading"><span class="section-index">// EXPERTISE</span><h2>Tools I use to solve<br>real PLM problems.</h2></div>
       <div class="expertise-grid">
-        <article class="skill-card"><div class="skill-icon">⌘</div><h3>Teamcenter customization</h3><p>ITK, C++, AOM, GRM, EPM, POM, workflows, ACLs, queries, and business logic.</p><div class="tags"><span>ITK</span><span>C++</span><span>Workflow</span><span>ACL</span></div></article>
-        <article class="skill-card"><div class="skill-icon">◇</div><h3>BMIDE & data modeling</h3><p>Business object modeling, properties, rules, extensions, and lifecycle-aware data structures.</p><div class="tags"><span>BMIDE</span><span>Data Model</span><span>Business Rules</span></div></article>
-        <article class="skill-card"><div class="skill-icon">▦</div><h3>Active Workspace</h3><p>Web client customization, saved search experiences, stylesheets, and user-focused interfaces.</p><div class="tags"><span>AWC</span><span>JavaScript</span><span>REST APIs</span></div></article>
-        <article class="skill-card"><div class="skill-icon">⇄</div><h3>Migration & integration</h3><p>Data migration, CSV-driven workflows, validation, and CAD–PLM integration support.</p><div class="tags"><span>SQL</span><span>MySQL</span><span>Data Quality</span></div></article>
+        <article class="skill-card tilt" data-tilt><div class="skill-icon">⌘</div><h3>Teamcenter customization</h3><p>ITK, C++, AOM, GRM, EPM, POM, workflows, ACLs, queries, and business logic.</p><div class="tags"><span>ITK</span><span>C++</span><span>Workflow</span><span>ACL</span></div></article>
+        <article class="skill-card tilt" data-tilt><div class="skill-icon">◇</div><h3>BMIDE & data modeling</h3><p>Business object modeling, properties, rules, extensions, and lifecycle-aware data structures.</p><div class="tags"><span>BMIDE</span><span>Data Model</span><span>Business Rules</span></div></article>
+        <article class="skill-card tilt" data-tilt><div class="skill-icon">▦</div><h3>Active Workspace</h3><p>Web client customization, saved search experiences, stylesheets, and user-focused interfaces.</p><div class="tags"><span>AWC</span><span>JavaScript</span><span>REST APIs</span></div></article>
+        <article class="skill-card tilt" data-tilt><div class="skill-icon">⇄</div><h3>Migration & integration</h3><p>Data migration, CSV-driven workflows, validation, and CAD–PLM integration support.</p><div class="tags"><span>SQL</span><span>MySQL</span><span>Data Quality</span></div></article>
       </div>
+
+      <div class="skillbars">
+        <div class="skillbar"><div class="skillbar-top"><span>Teamcenter ITK / C++</span><em data-level="92">92%</em></div><div class="skillbar-track"><i data-level="92"></i></div></div>
+        <div class="skillbar"><div class="skillbar-top"><span>BMIDE & Data Modeling</span><em data-level="90">90%</em></div><div class="skillbar-track"><i data-level="90"></i></div></div>
+        <div class="skillbar"><div class="skillbar-top"><span>Active Workspace</span><em data-level="85">85%</em></div><div class="skillbar-track"><i data-level="85"></i></div></div>
+        <div class="skillbar"><div class="skillbar-top"><span>Data Migration & Integration</span><em data-level="88">88%</em></div><div class="skillbar-track"><i data-level="88"></i></div></div>
+      </div>
+
       <div class="toolbelt"><span class="tiny-label">TECH STACK</span><div class="tool-list"><span>Teamcenter 2512</span><span>Active Workspace</span><span>BMIDE</span><span>C / C++</span><span>Java</span><span>Python</span><span>JavaScript</span><span>SQL / XML</span><span>ITK / REST APIs</span><span>NX</span><span>Solid Edge</span><span>SolidWorks</span><span>Visual Studio</span><span>GitHub</span><span>Jira</span><span>Polarion</span><span>Azure DevOps</span><span>MySQL Workbench</span></div></div>
       <div class="skills-detail-grid">
         <div class="skills-detail"><span class="tiny-label">TEAMCENTER MODULES</span><p>Workflow Designer · Structure Manager · Classification Administration · Query Builder · Projects · Organization · ACLs · Change Management · Report Builder · XRT Editor</p></div>
@@ -80,7 +108,7 @@
     </section>
 
     <section class="section-wrap section-block" id="projects">
-      <div class="section-heading"><span class="section-index">SELECTED WORK</span><h2>Work that connects<br>systems and people.</h2></div>
+      <div class="section-heading"><span class="section-index">// SELECTED WORK</span><h2>Work that connects<br>systems and people.</h2></div>
       <div class="interaction-tools" aria-label="Filter projects">
         <span class="tiny-label">EXPLORE BY FOCUS</span>
         <div class="project-filters" role="group" aria-label="Project category filters">
@@ -94,7 +122,7 @@
       <div class="projects-list">
         <article class="project-card" data-category="bmide">
           <div class="project-visual project-visual-a project-image-stage"><img class="project-image-preview" src="teamcenter-bmide-preview.png" alt="Teamcenter BMIDE data modeling interface concept" loading="lazy"><span class="image-caption">BMIDE · DATA MODELING</span></div>
-          <div class="project-content"><div class="project-type">DATA MODELING / BMIDE</div><h3>Enterprise Data Model Configuration & Customization</h3><p>Configured custom item types, forms, LOVs, and business rules, including display, naming, GRM, and deep-copy rules, to support business-specific data and lifecycle needs.</p><div class="project-details"><span>Role <b>PLM Developer</b></span><span>Tools <b>BMIDE · Teamcenter</b></span></div><div class="project-footer"><span class="project-status">BMIDE · Teamcenter</span><a href="#contact" aria-label="Ask about this project">↗</a></div></div>
+          <div class="project-content"><div class="project-type">DATA MODELING / BMIDE</div><h3>Enterprise Data Model Configuration &amp; Customization</h3><p>Configured custom item types, forms, LOVs, and business rules — including display, naming, GRM, and deep-copy rules — to support business-specific data and lifecycle needs.</p><div class="project-details"><span>Role <b>PLM Developer</b></span><span>Tools <b>BMIDE · Teamcenter</b></span></div><div class="project-footer"><span class="project-status">BMIDE · Teamcenter</span><a href="#contact" aria-label="Ask about this project">↗</a></div></div>
         </article>
         <article class="project-card project-reverse" data-category="migration">
           <div class="project-visual project-visual-b project-image-stage"><img class="project-image-preview" src="teamcenter-migration-preview.png" alt="Teamcenter data migration and validation interface concept" loading="lazy"><span class="image-caption">DATA MIGRATION · VALIDATION</span></div>
@@ -102,39 +130,41 @@
         </article>
         <article class="project-card" data-category="awc">
           <div class="project-visual project-visual-c project-visual-awc"><img class="awc-project-image" src="teamcenter-awc-home.png" alt="Siemens Teamcenter X Active Workspace home dashboard showing folders, searches, reports, classification, and engineering tools" loading="lazy"></div>
-          <div class="project-content"><div class="project-type">USER EXPERIENCE / AWC</div><h3>Active Workspace Customization</h3><p>Delivered Active Workspace customization across icons, workspaces, custom commands, actions, and stylesheets, and developed custom queries to improve access to engineering data.</p><div class="project-details"><span>Focus <b>Usability</b></span><span>Tools <b>XRT Editor· Panel Builder · Command Builder · AWC · JavaScript</b></span></div><div class="project-footer"><span class="project-status">AWC · Query Builder</span><a href="#contact" aria-label="Ask about this project">↗</a></div></div>
+          <div class="project-content"><div class="project-type">USER EXPERIENCE / AWC</div><h3>Active Workspace Customization</h3><p>Delivered Active Workspace customization across icons, workspaces, custom commands, actions, and stylesheets, and developed custom queries to improve access to engineering data.</p><div class="project-details"><span>Focus <b>Usability</b></span><span>Tools <b>XRT Editor · Panel Builder · Command Builder · AWC · JavaScript</b></span></div><div class="project-footer"><span class="project-status">AWC · Query Builder</span><a href="#contact" aria-label="Ask about this project">↗</a></div></div>
         </article>
       </div>
     </section>
 
     <section class="section-wrap section-block" id="experience">
-      <div class="section-heading"><span class="section-index">PROFESSIONAL EXPERIENCE</span><h2>Enterprise PLM delivery.<br>From design to deployment.</h2></div>
+      <div class="section-heading"><span class="section-index">// PROFESSIONAL EXPERIENCE</span><h2>Enterprise PLM delivery.<br>From design to deployment.</h2></div>
       <div class="timeline">
-        <div class="timeline-item"><div class="timeline-date">OCT 2025 - PRESENT</div><div class="timeline-marker"></div><div class="timeline-body"><div class="timeline-top"><h3>PLM Developer</h3><span class="timeline-type">FULL-TIME</span></div><h4>Product & System Engineer · Capgemini</h4><p>Build custom Teamcenter utilities, extensions, action and rule handlers using ITK (C/C++). Deliver Active Workspace UI customization, design 20+ workflows, configure BMIDE item types and business rules, and manage 100+ classification classes. Contribute to Teamcenter administration and support deployments across QA and sandbox environments.</p><p>Administration and deployment work includes stylesheets, DLLs/shared objects, workflows, ACLs, queries, classification, organization, preferences, and related modules using Deployment Center.</p><div class="tags"><span>ITK / C++</span><span>AWC</span><span>BMIDE</span><span>Teamcenter Administration</span><span>QA & Sandbox Deployments</span><span>Workflow Design</span><span>Classification</span></div></div></div>
-        <div class="timeline-item"><div class="timeline-date">MAY 2022 - OCT 2025</div><div class="timeline-marker"></div><div class="timeline-body"><div class="timeline-top"><h3>Project Engineer</h3><span class="timeline-type">FULL-TIME</span></div><h4>Wipro Technologies, Bangalore · PLM Developer / PLM Test Lead Engineer</h4><p>Led cross-functional sprint testing, developed and executed test plans, and coordinated with customers, business teams, and developers across Agile delivery. Migrated 10,000+ items to production with 100% accuracy using IPS data upload and custom utilities. Developed Active Workspace queries and delivered attribute mapping for NX, Solid Edge, and SolidWorks CAD–PLM integrations.</p><div class="tags"><span>Team Leadership</span><span>Data Migration</span><span>Query Builder</span><span>CAD–PLM Integration</span></div></div></div>
-        <div class="timeline-item"><div class="timeline-date">FEB 2022 - MAY 2022</div><div class="timeline-marker"></div><div class="timeline-body"><div class="timeline-top"><h3>Programmer Analyst Trainee</h3><span class="timeline-type">INTERNSHIP</span></div><h4>Cognizant Technology Solutions</h4><p>Designed and optimized MySQL queries to reduce data-fetch time, and contributed to database design and query execution planning with the team.</p><div class="tags"><span>MySQL</span><span>SQL Optimization</span><span>Database Design</span></div></div></div>
+        <div class="timeline-item"><div class="timeline-date">OCT 2025 — PRESENT</div><div class="timeline-marker"></div><div class="timeline-body"><div class="timeline-top"><h3>PLM Developer</h3><span class="timeline-type">FULL-TIME</span></div><h4>Product &amp; System Engineer · Capgemini</h4><p>Build custom Teamcenter utilities, extensions, action and rule handlers using ITK (C/C++). Deliver Active Workspace UI customization, design 20+ workflows, configure BMIDE item types and business rules, and manage 100+ classification classes. Contribute to Teamcenter administration and support deployments across QA and sandbox environments.</p><p>Administration and deployment work includes stylesheets, DLLs/shared objects, workflows, ACLs, queries, classification, organization, preferences, and related modules using Deployment Center.</p><div class="tags"><span>ITK / C++</span><span>AWC</span><span>BMIDE</span><span>Teamcenter Administration</span><span>QA &amp; Sandbox Deployments</span><span>Workflow Design</span><span>Classification</span></div></div></div>
+        <div class="timeline-item"><div class="timeline-date">MAY 2022 — OCT 2025</div><div class="timeline-marker"></div><div class="timeline-body"><div class="timeline-top"><h3>Project Engineer</h3><span class="timeline-type">FULL-TIME</span></div><h4>Wipro Technologies, Bangalore · PLM Developer / PLM Test Lead Engineer</h4><p>Led cross-functional sprint testing, developed and executed test plans, and coordinated with customers, business teams, and developers across Agile delivery. Migrated 10,000+ items to production with 100% accuracy using IPS data upload and custom utilities. Developed Active Workspace queries and delivered attribute mapping for NX, Solid Edge, and SolidWorks CAD–PLM integrations.</p><div class="tags"><span>Team Leadership</span><span>Data Migration</span><span>Query Builder</span><span>CAD–PLM Integration</span></div></div></div>
+        <div class="timeline-item"><div class="timeline-date">FEB 2022 — MAY 2022</div><div class="timeline-marker"></div><div class="timeline-body"><div class="timeline-top"><h3>Programmer Analyst Trainee</h3><span class="timeline-type">INTERNSHIP</span></div><h4>Cognizant Technology Solutions</h4><p>Designed and optimized MySQL queries to reduce data-fetch time, and contributed to database design and query execution planning with the team.</p><div class="tags"><span>MySQL</span><span>SQL Optimization</span><span>Database Design</span></div></div></div>
       </div>
     </section>
 
     <section class="section-wrap section-block" id="achievement">
-      <div class="section-heading"><span class="section-index">ACHIEVEMENT</span><h2>Applying AI to<br>engineering change.</h2></div>
-      <article class="achievement-card">
+      <div class="section-heading"><span class="section-index">// ACHIEVEMENT</span><h2>Applying AI to<br>engineering change.</h2></div>
+      <article class="achievement-card tilt" data-tilt>
         <div class="achievement-mark">✳</div>
-        <div class="achievement-content"><span class="project-type">WIPRO GEN AI IDEATHON · JULY - SEPTEMBER 2023</span><h3>AI-Driven Change Impact Analysis</h3><p>Developed an AI-driven concept to improve change impact analysis when an engineer modifies a part. The solution aims to identify affected items, assemblies, related documents, and downstream manufacturing impacts, helping engineers assess change consequences more efficiently.</p><div class="tags"><span>Generative AI</span><span>Engineering Change</span><span>Impact Analysis</span></div></div>
+        <div class="achievement-content"><span class="project-type">WIPRO GEN AI IDEATHON · JULY – SEPTEMBER 2023</span><h3>AI-Driven Change Impact Analysis</h3><p>Developed an AI-driven concept to improve change impact analysis when an engineer modifies a part. The solution aims to identify affected items, assemblies, related documents, and downstream manufacturing impacts, helping engineers assess change consequences more efficiently.</p><div class="tags"><span>Generative AI</span><span>Engineering Change</span><span>Impact Analysis</span></div></div>
       </article>
     </section>
 
     <section class="section-wrap section-block education-block">
-      <div class="section-heading"><span class="section-index">FOUNDATION</span><h2>Strong fundamentals.<br>Continuous learning.</h2></div>
+      <div class="section-heading"><span class="section-index">// FOUNDATION</span><h2>Strong fundamentals.<br>Continuous learning.</h2></div>
       <div class="education-grid">
-        <div class="education-card"><span class="tiny-label">EDUCATION</span><h3>B.E. Computer Science & Engineering</h3><p>Hindustan Institute of Technology · Anna University, Tamil Nadu</p><small>June 2018 - May 2022 · CGPA: 8.49 / 10 · First Class</small></div>
-        <div class="education-card"><span class="tiny-label">CERTIFICATIONS</span><h3>Professional certifications</h3><ul><li>Siemens Teamcenter Professional</li><li>Siemens Partner - Teamcenter X Associate</li><li>AWS Cloud Practitioner</li></ul></div>
+        <div class="education-card tilt" data-tilt><span class="tiny-label">EDUCATION</span><h3>B.E. Computer Science &amp; Engineering</h3><p>Hindustan Institute of Technology · Anna University, Tamil Nadu</p><small>June 2018 — May 2022 · CGPA: 8.49 / 10 · First Class</small></div>
+        <div class="education-card tilt" data-tilt><span class="tiny-label">CERTIFICATIONS</span><h3>Professional certifications</h3><ul><li>Siemens Teamcenter Professional</li><li>Siemens Partner — Teamcenter X Associate</li><li>AWS Cloud Practitioner</li></ul></div>
       </div>
     </section>
 
-    <section class="contact-section" id="contact"><div class="contact-inner section-wrap"><span class="section-index">CONTACT</span><h2>Have a complex PLM<br><span class="gradient-text">problem to solve?</span></h2><p>I'm interested in meaningful engineering challenges and product-focused teams. Let's connect.</p><div class="contact-actions"><a class="button button-primary" id="emailLink" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rvishnuprasad310%40gmail.com" target="_blank" rel="noopener noreferrer">Email me ↗</a><a class="button button-secondary" id="linkedinLink" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="button button-secondary" id="githubLink" href="./github.html">GitHub ↗</a></div></div></section>
+    <section class="contact-section" id="contact"><div class="contact-inner section-wrap"><span class="section-index">// CONTACT</span><h2>Have a complex PLM<br><span class="gradient-text">problem to solve?</span></h2><p>I'm interested in meaningful engineering challenges and product-focused teams. Let's connect.</p><div class="contact-actions"><a class="button button-primary magnetic" id="emailLink" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rvishnuprasad310%40gmail.com" target="_blank" rel="noopener noreferrer">Email me ↗</a><a class="button button-secondary magnetic" id="linkedinLink" href="https://www.linkedin.com/in/vishnuprasad-r-2a908b190/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="button button-secondary magnetic" id="githubLink" href="https://github.com/vishnuprasad0509" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></section>
   </main>
-  <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark">RV</span><span>R Vishnuprasad<span class="brand-dot">.</span></span></a><span>Designed for clarity. Built for engineering.</span></footer>
+
+  <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark">RV</span><span>R Vishnuprasad<span class="brand-dot">.</span></span></a><span>Designed for clarity. Built for engineering.</span><span class="footer-year" id="footerYear"></span></footer>
+
   <div class="floating-controls" aria-label="Page controls">
     <button class="icon-control" id="backToTop" type="button" aria-label="Back to top" title="Back to top">
       <svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
@@ -144,6 +174,7 @@
       <svg class="theme-moon" aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg>
     </button>
   </div>
-  <script src="script.js?v=github-maintenance-2"></script>
+
+  <script src="script.js?v=techy-3"></script>
 </body>
 </html>
