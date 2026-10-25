@@ -11,7 +11,7 @@
     name: "R Vishnuprasad",
     email: "rvishnuprasad310@gmail.com",
     linkedin: "https://www.linkedin.com/in/vishnuprasad-r-2a908b190/",
-    github: "https://github.com/vishnuprasad0509",
+    github: "./github.html",
     resume: "Vishnuprasad_R_Resume.pdf"
   };
   document.title = `${portfolio.name} | Siemens Teamcenter & PLM Developer`;
@@ -24,8 +24,14 @@
   };
   setLink("emailLink", `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(portfolio.email)}`);
   setLink("linkedinLink", portfolio.linkedin);
-  setLink("githubLink", portfolio.github);
   setLink("navResume", portfolio.resume);
+  // GitHub points to the local maintenance page — keep it same-tab, no external rel.
+  const githubLink = document.getElementById("githubLink");
+  if (githubLink) {
+    githubLink.href = new URL(portfolio.github, document.baseURI).href;
+    githubLink.removeAttribute("target");
+    githubLink.removeAttribute("rel");
+  }
 
   const footerYear = document.getElementById("footerYear");
   if (footerYear) footerYear.textContent = `© ${new Date().getFullYear()}`;
