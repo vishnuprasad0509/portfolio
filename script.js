@@ -4,7 +4,7 @@ const portfolio = {
   name: "R Vishnuprasad",
   email: "rvishnuprasad310@gmail.com",
   linkedin: "https://www.linkedin.com/in/vishnuprasad-r-2a908b190/?isSelfProfile=true",
-  github: "https://github.com/"
+  github: "./github.html"
 };
 
 document.title = `${portfolio.name} | Siemens Teamcenter & PLM Developer`;
@@ -25,7 +25,9 @@ if (linkedinLink) {
 }
 
 if (githubLink) {
-  githubLink.href = portfolio.github;
+  githubLink.href = new URL(portfolio.github, document.baseURI).href;
+  githubLink.removeAttribute("target");
+  githubLink.removeAttribute("rel");
 }
 
 // Mobile navigation menu

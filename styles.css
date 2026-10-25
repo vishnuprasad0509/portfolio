@@ -61,8 +61,6 @@ body.light-mode .site-header .menu-toggle { color: #172033 !important; backgroun
 
 
 /* Accessible icon controls: avoid raw arrow/sun characters in the UI */
-.footer-back-top{display:inline-flex;align-items:center;gap:7px}
-.footer-back-top svg{display:block;flex:0 0 auto}
 .floating-controls{position:fixed;right:22px;bottom:22px;z-index:30;display:flex;flex-direction:column;gap:9px}
 .icon-control{width:42px;height:42px;display:grid;place-items:center;border:1px solid #83f0c555;border-radius:12px;background:#111a26;color:var(--accent);cursor:pointer;box-shadow:0 8px 24px #0003;transition:transform .2s,background .2s,border-color .2s}
 .icon-control:hover{transform:translateY(-2px);background:#172638;border-color:var(--accent)}
@@ -216,3 +214,91 @@ body.light-mode .filter-status{color:#374151;}
 body.light-mode .filter-chip{background:#fff;color:#344258;border-color:rgba(35,55,85,.2)}
 body.light-mode .filter-chip[aria-pressed="true"],body.light-mode .filter-chip.active{background:#d1fae5;color:#065f46;border-color:#087f5b}
 @media(prefers-reduced-motion:reduce){.hero-visual .orbit-a,.hero-visual .orbit-b,.hero-visual .orbit-c,.float-chip{animation:none!important}.project-card.filter-in{animation:none}}
+
+
+/* Footer tagline stays centered; polished floating theme and top controls */
+.site-footer{position:relative;justify-content:space-between;padding:22px 0;min-height:100px}
+.site-footer>span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:max-content;max-width:42%;text-align:center;white-space:normal;line-height:1.6;color:#91a0b6}
+.floating-controls{position:fixed;right:24px;bottom:24px;z-index:100;display:flex;flex-direction:column;gap:11px;padding:9px;border:1px solid rgba(131,240,197,.2);border-radius:24px;background:rgba(10,15,24,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 16px 42px rgba(0,0,0,.28)}
+.icon-control{position:relative;isolation:isolate;overflow:hidden;width:48px;height:48px;display:grid;place-items:center;border:1px solid rgba(131,240,197,.28);border-radius:17px;background:linear-gradient(145deg,#172638,#0b121d);color:#83f0c5;cursor:pointer;box-shadow:inset 0 1px rgba(255,255,255,.08),0 6px 16px rgba(0,0,0,.18);transition:transform .25s cubic-bezier(.2,.8,.2,1),border-color .25s,box-shadow .25s,background .25s,color .25s}
+.icon-control::before{content:"";position:absolute;inset:-45%;z-index:-1;background:linear-gradient(115deg,transparent 35%,rgba(131,240,197,.2),transparent 65%);transform:translateX(-75%) rotate(12deg);transition:transform .5s ease}
+.icon-control:hover{transform:translateY(-3px) scale(1.04);border-color:#83f0c5;box-shadow:0 0 0 4px rgba(131,240,197,.08),0 12px 28px rgba(0,0,0,.3);color:#b8ffe5}
+.icon-control:hover::before{transform:translateX(75%) rotate(12deg)}
+.icon-control:active{transform:scale(.94)}
+.icon-control svg{width:21px;height:21px;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+#backToTop svg{transition:transform .3s ease}
+#backToTop:hover svg{transform:translateY(-3px)}
+#backToTop{opacity:0;pointer-events:none;transform:translateY(10px) scale(.92)}
+#backToTop.visible{opacity:1;pointer-events:auto;transform:translateY(0) scale(1)}
+#themeToggle:hover .theme-sun{transform:rotate(35deg)}
+#themeToggle:hover .theme-moon{transform:rotate(-18deg) scale(1.08)}
+body.light-mode .floating-controls{background:rgba(255,255,255,.82);border-color:rgba(8,127,91,.18);box-shadow:0 16px 42px rgba(23,32,51,.16)}
+body.light-mode .icon-control{background:linear-gradient(145deg,#fff,#edf7f3)!important;color:#087f5b!important;border-color:rgba(8,127,91,.22)!important;box-shadow:inset 0 1px #fff,0 7px 18px rgba(23,32,51,.1)!important}
+body.light-mode .icon-control:hover{color:#065f46!important;border-color:#087f5b!important;box-shadow:0 0 0 4px rgba(8,127,91,.08),0 12px 28px rgba(23,32,51,.15)!important}
+body.light-mode .icon-control::before{background:linear-gradient(115deg,transparent 35%,rgba(8,127,91,.12),transparent 65%)}
+@media(max-width:700px){.site-footer{justify-content:center;padding:20px 0 24px;gap:12px}.site-footer>.brand{margin:0 auto}.site-footer>span{position:static;order:3;transform:none;width:100%;max-width:100%;text-align:center}.floating-controls{right:13px;bottom:14px;padding:7px;gap:8px;border-radius:21px}.icon-control{width:44px;height:44px;border-radius:15px}}
+@media(prefers-reduced-motion:reduce){.icon-control,.icon-control svg,.icon-control::before{transition:none!important}}
+
+
+/* Real Teamcenter Active Workspace screenshot in the featured AWC project */
+.project-visual-awc{padding:0;background:#076b87;align-items:stretch;justify-items:stretch}
+.awc-project-image{display:block;width:100%;height:100%;min-height:280px;object-fit:cover;object-position:center center;transition:transform .45s ease,filter .3s ease}
+.project-card:hover .awc-project-image{transform:scale(1.025);filter:saturate(1.06)}
+body.light-mode .project-visual-awc{background:#e8eef6}
+@media(max-width:700px){.awc-project-image{min-height:220px;max-height:300px;object-fit:cover}}
+@media(prefers-reduced-motion:reduce){.awc-project-image{transition:none}}
+
+
+/* Dynamic Teamcenter PLM project imagery */
+.project-image-stage{isolation:isolate;background:#07111d!important;overflow:hidden}
+.project-image-stage::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(135deg,rgba(9,19,32,.12),transparent 55%,rgba(28,224,177,.08))}
+.project-image-preview{display:block;width:100%;height:100%;min-height:280px;object-fit:cover;object-position:center;border:0;transition:transform .55s cubic-bezier(.2,.7,.2,1),filter .35s ease;filter:saturate(1.08) contrast(1.03)}
+.project-card:hover .project-image-preview{transform:scale(1.055);filter:saturate(1.2) contrast(1.06)}
+.image-caption{position:absolute;left:14px;bottom:13px;z-index:2;padding:7px 10px;border:1px solid rgba(131,240,197,.3);border-radius:7px;background:rgba(5,13,23,.78);backdrop-filter:blur(10px);color:#a7f8db;font:9px 'DM Mono',monospace;letter-spacing:.08em}
+body.light-mode .project-image-stage{background:#e8eef6!important}
+body.light-mode .image-caption{background:rgba(255,255,255,.92);color:#087f5b;border-color:rgba(8,127,91,.25)}
+@media(max-width:700px){.project-image-preview{min-height:230px}.image-caption{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.project-image-preview{transition:none}}
+
+
+/* Image fit improvements: show complete Teamcenter screenshots and preview artwork */
+.project-image-stage {
+  position: relative;
+  min-height: 280px;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  background: #07111d !important;
+}
+.project-image-stage .project-image-preview {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+  padding: 8px;
+}
+.project-visual-awc {
+  position: relative;
+  min-height: 280px;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  background: #07111d !important;
+}
+.project-visual-awc .awc-project-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+  padding: 8px;
+}
+@media (max-width: 700px) {
+  .project-image-stage, .project-visual-awc { aspect-ratio: 4 / 3; min-height: 220px; }
+  .project-image-stage .project-image-preview, .project-visual-awc .awc-project-image { min-height: 0; padding: 6px; }
+}
