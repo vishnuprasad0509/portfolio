@@ -111,13 +111,15 @@
       <div class="interaction-tools" aria-label="Filter projects">
         <span class="tiny-label">EXPLORE BY FOCUS</span>
         <div class="project-filters" role="group" aria-label="Project category filters">
-          <button class="filter-chip active" type="button" data-filter="all" aria-pressed="true">All work <span>03</span></button>
+          <button class="filter-chip active" type="button" data-filter="all" aria-pressed="true">All work <span>05</span></button>
           <button class="filter-chip" type="button" data-filter="bmide" aria-pressed="false">BMIDE</button>
           <button class="filter-chip" type="button" data-filter="migration" aria-pressed="false">Data migration</button>
           <button class="filter-chip" type="button" data-filter="awc" aria-pressed="false">Active Workspace</button>
+          <button class="filter-chip" type="button" data-filter="workflow" aria-pressed="false">Workflow</button>
+          <button class="filter-chip" type="button" data-filter="cad" aria-pressed="false">CAD</button>
         </div>
       </div>
-      <p class="filter-status" id="filterStatus" aria-live="polite">Showing all 3 featured projects.</p>
+      <p class="filter-status" id="filterStatus" aria-live="polite">Showing all 5 featured projects.</p>
       <div class="projects-list">
         <article class="project-card" data-category="bmide">
           <div class="project-visual project-visual-a project-image-stage"><img class="project-image-preview" src="teamcenter-bmide-preview.png" alt="Teamcenter BMIDE data modeling interface concept" loading="lazy"><span class="image-caption">BMIDE · DATA MODELING</span></div>
@@ -125,12 +127,32 @@
         </article>
         <article class="project-card project-reverse" data-category="migration">
           <div class="project-visual project-visual-b project-image-stage"><img class="project-image-preview" src="teamcenter-migration-preview.png" alt="Teamcenter data migration and validation interface concept" loading="lazy"><span class="image-caption">DATA MIGRATION · VALIDATION</span></div>
-          <div class="project-content"><div class="project-type">DATA MIGRATION / QUALITY</div><h3>Data Migration</h3><p>Migrated 10,000+ items to production with 100% accuracy, including item metadata, classification data, and related files using IPS data upload and custom utilities.</p><div class="project-details"><span>Focus <b>Data integrity</b></span><span>Tools <b>SQL · Scripts</b></span></div><div class="project-footer"><span class="project-status">10,000+ items · 100% accuracy</span><a href="#contact" aria-label="Ask about this project">↗</a></div></div>
+          <div class="project-content"><div class="project-type">DATA MIGRATION / QUALITY</div><h3>Large-Scale Data Migration</h3><p>Migrated 10,000+ items to production with 100% accuracy — items, metadata, classification data, and attached files — using IPS data upload utilities and custom scripts.</p><div class="project-details"><span>Focus <b>Data integrity</b></span><span>Tools <b>IPS · SQL · Scripts</b></span></div><div class="project-footer"><span class="project-status">10,000+ items · 100% accuracy</span><a href="#contact" aria-label="Ask about this project">↗</a></div></div>
         </article>
         <article class="project-card" data-category="awc">
           <div class="project-visual project-visual-c project-visual-awc"><img class="awc-project-image" src="teamcenter-awc-home.png" alt="Siemens Teamcenter X Active Workspace home dashboard showing folders, searches, reports, classification, and engineering tools" loading="lazy"></div>
-          <div class="project-content"><div class="project-type">USER EXPERIENCE / AWC</div><h3>Active Workspace Customization</h3><p>Delivered Active Workspace customization across icons, workspaces, custom commands, actions, and stylesheets, and developed custom queries to improve access to engineering data.</p><div class="project-details"><span>Focus <b>Usability</b></span><span>Tools <b>XRT Editor · Panel Builder · Command Builder · AWC · JavaScript</b></span></div><div class="project-footer"><span class="project-status">AWC · Query Builder</span><a href="#contact" aria-label="Ask about this project">↗</a></div></div>
+          <div class="project-content"><div class="project-type">USER EXPERIENCE / AWC</div><h3>Active Workspace Customization</h3><p>Delivered Active Workspace customization across icons, workspaces, custom commands, actions, and stylesheets, and developed custom queries to improve access to engineering data.</p><div class="project-details"><span>Focus <b>Usability</b></span><span>Tools <b>XRT Editor · Panel Builder · Command Builder</b></span></div><div class="project-footer"><span class="project-status">AWC · Query Builder</span><a href="#contact" aria-label="Ask about this project">↗</a></div></div>
         </article>
+        <article class="project-card project-reverse" data-category="workflow">
+          <div class="project-visual project-visual-d project-image-stage"><img class="project-image-preview" src="teamcenter-workflow-preview.png" alt="Teamcenter Workflow Designer process concept" loading="lazy"><span class="image-caption">WORKFLOW · AUTOMATION</span></div>
+          <div class="project-content"><div class="project-type">PROCESS AUTOMATION / WORKFLOW</div><h3>Workflow Design &amp; Process Automation</h3><p>Designed 20+ custom Teamcenter workflows encoding business logic, approvals, and lifecycle transitions — ensuring process correctness and efficiency across cross-functional teams.</p><div class="project-details"><span>Scope <b>20+ workflows</b></span><span>Tools <b>Workflow Designer · EPM</b></span></div><div class="project-footer"><span class="project-status">Workflow Designer · EPM</span><a href="#contact" aria-label="Ask about this project">↗</a></div></div>
+        </article>
+        <article class="project-card" data-category="cad">
+          <div class="project-visual project-visual-e project-image-stage"><img class="project-image-preview" src="teamcenter-cad-preview.png" alt="Teamcenter CAD-PLM integration concept with NX, Solid Edge and SolidWorks" loading="lazy"><span class="image-caption">CAD–PLM · INTEGRATION</span></div>
+          <div class="project-content"><div class="project-type">CAD–PLM / INTEGRATION</div><h3>CAD–PLM Integration</h3><p>Configured custom attribute mapping and integrated NX, Solid Edge, and SolidWorks with Active Workspace — ensuring full, reliable PLM–CAD connectivity for engineering teams.</p><div class="project-details"><span>Focus <b>Interoperability</b></span><span>Tools <b>NX · Solid Edge · SolidWorks</b></span></div><div class="project-footer"><span class="project-status">Full PLM–CAD connectivity</span><a href="#contact" aria-label="Ask about this project">↗</a></div></div>
+        </article>
+      </div>
+
+      <div class="more-projects">
+        <span class="tiny-label">MORE ENGINEERING WORK</span>
+        <div class="capability-grid">
+          <article class="capability-card tilt" data-tilt><div class="cap-icon">⌘</div><h4>Server-Side Customization</h4><p>Custom utilities, extensions, action &amp; rule handlers built in Teamcenter ITK (C/C++) to solve complex business requirements.</p><div class="cap-meta"><span>ITK</span><span>C / C++</span></div></article>
+          <article class="capability-card tilt" data-tilt><div class="cap-icon">▤</div><h4>Classification</h4><p>Built and managed 100+ classes, hierarchies, attributes, and LOVs — aligned to business and search requirements.</p><div class="cap-meta"><span>100+ classes</span><span>Hierarchies</span></div></article>
+          <article class="capability-card tilt" data-tilt><div class="cap-icon">⇅</div><h4>BMIDE Hot &amp; Cold Deployment</h4><p>Deployed BMIDE packages — stylesheets, DLLs, workflows, queries, classification trees, and CAD integrations.</p><div class="cap-meta"><span>Hot / Cold</span><span>Deployment</span></div></article>
+          <article class="capability-card tilt" data-tilt><div class="cap-icon">◈</div><h4>Organization &amp; Administration</h4><p>Created groups, roles, users &amp; persons via make-user; served as Backup Admin for imports across modules.</p><div class="cap-meta"><span>make-user</span><span>Backup Admin</span></div></article>
+          <article class="capability-card tilt" data-tilt><div class="cap-icon">⌕</div><h4>Query Builder</h4><p>Developed custom Active Workspace queries to meet enterprise reporting and search requirements.</p><div class="cap-meta"><span>AWC</span><span>Saved Search</span></div></article>
+          <article class="capability-card tilt" data-tilt><div class="cap-icon">✳</div><h4>AI Change-Impact Analysis</h4><p>Gen AI Ideathon winner — AI that auto-identifies affected items, assemblies, documents &amp; downstream impacts on a part change.</p><div class="cap-meta"><span>Gen AI</span><span>Ideathon Winner</span></div></article>
+        </div>
       </div>
     </section>
 
